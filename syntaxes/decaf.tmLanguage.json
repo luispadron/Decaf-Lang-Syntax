@@ -1,45 +1,43 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+
 	"name": "decaf",
+
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "source.cpp"
 		},
 
 		{
-			"include": "#strings"
+			"name": "entity.name.function.preprocessor.decaf",
+			"match": "#[A-Z0-9]+"
 		},
 
 		{
-			"include": "#comments"
+			"name": "entity.name.function.decaf",
+			"match": "New|NewArray"
+		},
+
+		{
+			"name": "constant.language.decaf",
+			"match": "null"
+		},
+
+		{
+			"name": "storage.type.decaf",
+			"match": "class|interface"
+		},
+
+		{
+			"name": "storage.modifier.decaf",
+			"match": "extends|implements"
+		},
+
+		{
+			"name": "variable.language.this.decaf",
+			"match": "this"
 		}
 	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.decaf",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
 
-		"strings": {
-			"name": "string.quoted.double.decaf",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.decaf",
-					"match": "\\\\."
-				}
-			]
-		},
-
-		"comments": {
-			"patterns": [{
-				"name": "comment.line.double-dash.decaf",
-				"match": "//.*"
-			}]
-		}
-	},
 	"scopeName": "source.decaf"
 }
