@@ -5,8 +5,13 @@
 		{
 			"include": "#keywords"
 		},
+
 		{
 			"include": "#strings"
+		},
+
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -16,6 +21,7 @@
 				"match": "\\b(if|while|for|return)\\b"
 			}]
 		},
+
 		"strings": {
 			"name": "string.quoted.double.decaf",
 			"begin": "\"",
@@ -26,6 +32,13 @@
 					"match": "\\\\."
 				}
 			]
+		},
+
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-dash.decaf",
+				"match": "//.*"
+			}]
 		}
 	},
 	"scopeName": "source.decaf"
