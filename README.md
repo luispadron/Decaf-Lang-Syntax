@@ -11,3 +11,7 @@ To install this simply clone this repo into your `$HOME/.vscode/extensions` dire
 ## Usage
 
 All thats needed is to create a file ending in the `.decaf` extension, with this extension VSCode should automatically detect the language and show the correct language in the bottom right.
+
+```shell
+git clone git@github.com:luispadron/Decaf-Lang-Syntax.git ~/.vscode/extensions/decaf-lang-syntax
+```
