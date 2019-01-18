@@ -15,7 +15,7 @@
 
 		{
 			"name": "entity.name.function.decaf",
-			"match": "New|NewArray"
+			"match": "New(Array)?"
 		},
 
 		{
