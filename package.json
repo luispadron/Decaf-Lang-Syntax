@@ -1,0 +1,25 @@
+{
+    "name": "decaf",
+    "displayName": "decaf",
+    "description": "Decaf language support. Decaf is a programming language developed and taught @ University of Michigan - EECS 483 (Compiler Construction)",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "decaf",
+            "aliases": ["decaf", "decaf"],
+            "extensions": ["decaf"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "decaf",
+            "scopeName": "source.decaf",
+            "path": "./syntaxes/decaf.tmLanguage.json"
+        }]
+    }
+}
