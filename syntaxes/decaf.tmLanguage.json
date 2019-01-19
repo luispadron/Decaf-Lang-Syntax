@@ -5,10 +5,6 @@
 
 	"patterns": [
 		{
-			"include": "source.cpp"
-		},
-
-		{
 			"name": "entity.name.function.preprocessor.decaf",
 			"match": "#[A-Z0-9]+"
 		},
@@ -24,11 +20,6 @@
 		},
 
 		{
-			"name": "storage.type.decaf",
-			"match": "class|interface"
-		},
-
-		{
 			"name": "storage.modifier.decaf",
 			"match": "extends|implements"
 		},
@@ -41,6 +32,74 @@
 		{
 			"name": "storage.type.decaf",
 			"match": "string"
+		},
+
+		{
+			"begin": "\\b(class|struct)\\b\\s*([_A-Za-z][_A-Za-z0-9]*\\b)?+(\\s*(extends|implements)\\s*([_A-Za-z][_A-Za-z0-9]*\\b)((\\s*,\\s*[_A-Za-z][_A-Za-z0-9]*\\b)*))?",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.decaf"
+				},
+				"2": {
+					"name": "entity.name.type.decaf"
+				},
+				"4": {
+					"name": "storage.type.modifier.decaf"
+				},
+				"5": {
+					"name": "entity.name.type.inherited.decaf"
+				},
+				"6": {
+					"patterns": [
+						{
+							"match": "[_A-Za-z][_A-Za-z0-9]*",
+							"name": "entity.name.type.inherited.decaf"
+						}
+					]
+				}
+			},
+			"end": "(?<=\\})|(?=(;|\\(|\\)|>|\\[|\\]|=))",
+			"name": "meta.class-struct-block.cpp",
+			"patterns": [
+				{
+					"include": "#angle_brackets"
+				},
+				{
+					"begin": "\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.block.begin.bracket.curly.cpp"
+						}
+					},
+					"end": "(\\})(\\s*\\n)?",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.section.block.end.bracket.curly.cpp"
+						},
+						"2": {
+							"name": "invalid.illegal.you-forgot-semicolon.cpp"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#special_block"
+						},
+						{
+							"include": "#constructor"
+						},
+						{
+							"include": "$base"
+						}
+					]
+				},
+				{
+					"include": "$base"
+				}
+			]
+		},
+
+		{
+			"include": "source.cpp"
 		}
 	],
 
