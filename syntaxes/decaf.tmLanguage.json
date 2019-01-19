@@ -36,6 +36,11 @@
 		{
 			"name": "variable.language.this.decaf",
 			"match": "this"
+		},
+
+		{
+			"name": "storage.type.decaf",
+			"match": "string"
 		}
 	],
 
